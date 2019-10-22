@@ -8,26 +8,23 @@ class GoogleMapWithState extends React.Component{
     constructor(props){
         super(props);
         this.state = { 
-            value1:'',
-            value2:''
+            lat:'',
+            long:''
         }
     }
     
 
-    handleChange =(event) => {
-        this.setState({
-            value1 : event.target.value
-        });
-    }
-    handleChange1 =(event) => {
-        this.setState({
-            value2 : event.target.value
+    handleChange =(event, key) => {
+        this.setState(state => {
+            state[key] = event.target.value
+            return state;
         });
     }
     
     getLocation = (event) => {
-        let lng = this.state.value1;
-        let lat = this.state.value2;
+        
+        let lng = this.state.lat;
+        let lat = this.state.long;
         mapboxgl.accessToken = 'pk.eyJ1IjoiaGl0ZW4xOTgiLCJhIjoiY2sxdWtyN2cxMDV6eDNtbzZ6YmdtdHUzOSJ9.sBZjpWTcXAon-rEX3uG0nA';
                 const map = new mapboxgl.Map({
                     container: this.mapContainer,
@@ -48,8 +45,8 @@ class GoogleMapWithState extends React.Component{
         return(
             <div>
                 <form onSubmit={this.getLocation}>
-                    <label>Lat</label><br/><input type="text" value={this.state.value1} onChange={this.handleChange}></input><br/><br/><br/>
-                    <label>Lng</label><br/><input type="text" value={this.state.value2} onChange={this.handleChange1}></input><br/><br/><br/>
+                    <label>Lat</label><br/><input type="text" value={this.state.lat} onChange={() => this.handleChange(event, 'lat')}></input><br/><br/><br/>
+                    <label>Lng</label><br/><input type="text" value={this.state.long} onChange={() => this.handleChange(event ,'long')}></input><br/><br/><br/>
                     <input type="submit" value="Get Details" /><br/><br/>
                     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
                     <div style={style} ref={el => this.mapContainer = el} />
