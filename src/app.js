@@ -39,19 +39,24 @@ class GoogleMap extends React.Component{
             height:'600px',
             padding:'15px'
         }
+        const dnone = {
+            display:'none'
+        }
         return(
             <div>
-                <div style ={withinputref}>
-                    <h1>with input ref value</h1>
-                    <label>Lat</label><br/><input type="text" ref={input => this._name1 = input}></input><br/><br/><br/>
-                    <label>Lng</label><br/><input type="text" ref={input => this._name2 = input}></input><br/><br/><br/>
-                    <button onClick={this.getLocation}>Get Details</button><br/><br/>
-                    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
-                    <div style={style} ref={el => this.mapContainer = el} />
-                </div>
-                <div style ={withinputstate}>
-                <h1>with input state value</h1>
-                <GoogleMapWithState/>
+                <div style ={dnone}>
+                    <div style ={withinputref}>
+                        <h1>with input ref value</h1>
+                        <label>Lat</label><br/><input type="text" ref={input => this._name1 = input}></input><br/><br/><br/>
+                        <label>Lng</label><br/><input type="text" ref={input => this._name2 = input}></input><br/><br/><br/>
+                        <button onClick={this.getLocation}>Get Details</button><br/><br/>
+                        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+                        <div style={style} ref={el => this.mapContainer = el} />
+                    </div>
+                    <div style ={withinputstate}>
+                    <h1>with input state value</h1>
+                    <GoogleMapWithState/>
+                    </div>
                 </div>
             </div>
             

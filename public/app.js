@@ -32736,7 +32736,12 @@ function (_React$Component) {
         height: '600px',
         padding: '15px'
       };
+      var dnone = {
+        display: 'none'
+      };
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: dnone
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: withinputref
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "with input ref value"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Lat"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -32760,7 +32765,7 @@ function (_React$Component) {
         }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: withinputstate
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "with input state value"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_withstateMap__WEBPACK_IMPORTED_MODULE_4__["default"], null)));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "with input state value"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_withstateMap__WEBPACK_IMPORTED_MODULE_4__["default"], null))));
     }
   }]);
 
@@ -32927,4 +32932,4 @@ function (_React$Component) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=app.js.map
